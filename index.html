@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Student Task & Deadline Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">✓</span><div><strong>StudyFlow</strong><small>Student Task Manager</small></div></div>
+    <span class="today" id="todayLabel"></span>
+  </header>
+  <main class="container">
+    <section class="welcome">
+      <div><p class="eyebrow">YOUR STUDY SPACE</p><h1>Plan smarter. Study better.</h1>
+      <p>Keep assignments, exams, and deadlines in one simple place.</p></div>
+      <div class="welcome-mark">✦</div>
+    </section>
+    <section class="stats">
+      <article class="stat-card"><span>Total tasks</span><strong id="totalCount">0</strong><small>All your tasks</small></article>
+      <article class="stat-card"><span>Pending</span><strong id="pendingCount">0</strong><small>Still to do</small></article>
+      <article class="stat-card"><span>Completed</span><strong id="completedCount">0</strong><small>Great progress</small></article>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2>Add a task</h2><p>Capture what you need to finish next.</p></div></div>
+      <form id="taskForm" class="task-form">
+        <label>Task name<input id="taskTitle" type="text" placeholder="e.g. Complete DBMS assignment" required maxlength="100"></label>
+        <label>Category<select id="taskCategory"><option>Assignment</option><option>Exam</option><option>Project</option><option>Personal</option></select></label>
+        <label>Deadline<input id="taskDeadline" type="date" required></label>
+        <label>Priority<select id="taskPriority"><option>Medium</option><option>High</option><option>Low</option></select></label>
+        <button class="primary-btn" type="submit">＋ Add task</button>
+      </form>
+    </section>
+    <section class="panel">
+      <div class="tasks-heading"><div><h2>Your tasks</h2><p>Stay on top of your workload.</p></div>
+        <div class="filters"><input id="searchInput" type="search" placeholder="Search tasks…"><select id="statusFilter"><option value="all">All tasks</option><option value="pending">Pending</option><option value="completed">Completed</option></select></div>
+      </div>
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyMessage" class="empty">No tasks yet. Add your first task above!</p>
+    </section>
+    <footer>StudyFlow · Small steps make big progress.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
